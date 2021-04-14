@@ -1,35 +1,25 @@
 
-
-float angle = TWO_PI/6;
 ArrayList<Float> pointsx;
 ArrayList<Float> pointsy;
 
 ArrayList<PShape> shapes;
 
+float angle = TWO_PI/6;
 float x = 500;
 float y = 700;
 float radius = 20;  
-int MAX = 25;;
-
-
-int m;
-int i=0;
-
-PShape pshape;
+int MAX = 20;
 
 void setup()
 {
   size(1000,1000,P2D);
   background(0);
   
-  shapes = new ArrayList<PShape>();  
-  
+  shapes = new ArrayList<PShape>();   
   pointsx  = new ArrayList<Float>();
   pointsy  = new ArrayList<Float>();
   
-  
   FillScreen(x,y, 0);
-  
 }
 
 void draw()
@@ -72,7 +62,6 @@ void AddToList(float x, float y, int dir, int r, int g, int b)
     pointsx.add(nx);
     pointsy.add(ny); 
     shapes.add(DrawShape(nx,ny, r,g,b));
-    
   }
 }
 
@@ -104,12 +93,9 @@ float GetX(int where, float x, float y)
     case 3: return x - (radius + radius * cos(angle));
     case 4: return x + radius + radius * cos(angle); 
     case 5: return x - (radius + radius * cos(angle));
-    case 6: return x;
-    
+    case 6: return x; 
   }
-  
   return -1;
-  
 }
 
 float GetY(int where, float x, float y)
@@ -124,19 +110,14 @@ float GetY(int where, float x, float y)
     case 5: return y + radius * sin(angle); 
     case 6: return y + 2*radius * sin(angle); 
   }
-  
   return -1;
-  
 }
 
 boolean PointExists(float x, float y)
 {
   for (int i=0;i<pointsx.size(); i++)
-  {
     if (x==pointsx.get(i) && y==pointsy.get(i))
-    {
       return true;
-    }
-  }
+  
   return false;
 }
