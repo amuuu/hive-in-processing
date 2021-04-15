@@ -7,8 +7,8 @@ ArrayList<PShape> shapes;
 float angle = TWO_PI/6;
 float x = 500;
 float y = 700;
-float radius = 20;  
-int MAX = 20;
+float radius = 15;  
+int MAX = 40;
 
 void setup()
 {
@@ -37,7 +37,7 @@ void FillScreen(float x, float y, int m)
     if(m==0)
       AddNeighbors(x,y,255,255,100);
     else
-      AddNeighbors(x,y,200,200,200);
+      AddNeighbors(x,y,255,255,100);
     
     for(int i = oldsize; i < pointsx.size(); i++)
       FillScreen(pointsx.get(i), pointsy.get(i), ++m);
