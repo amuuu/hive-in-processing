@@ -3,11 +3,12 @@ float x=400, y=400;
 float radius = 100;
 float margin = 10;
 float s1, s2, s3;
+int counter=0;
 
 void setup()
 {
   size(800, 800, P2D);
-  frameRate(12);
+  
   background(0);
   
   s1 = random(10,30);
@@ -16,6 +17,12 @@ void setup()
 
 void draw()
 {
+  counter++;
+  if(counter%97==0)
+  {
+    frameRate(random(12,17));
+    counter = 0;
+  }
   background(0);
   valsin = sin(f);
   valcos = cos(f);
@@ -36,10 +43,12 @@ void draw()
     fill(random(0,255));
     rect(x+s2+random(-1*radius,radius)+margin,y-s2+random(-1*radius,radius)+margin,-1*s2*valcos,-1*s2*valcos);
     
-    noStroke();
-    fill(random(0,255));
-    rect(x-s1-s2+random(-1*radius,radius)+margin,y-s2-s1+random(-1*radius,radius)+margin,s1*valtan,s1*valtan);
-    
+    if(i%5==0)
+    {
+      noStroke();
+      fill(random(0,255));
+      rect(x-s1-s2+random(-1*radius,radius)+margin,y-s2-s1+random(-1*radius,radius)+margin,s1*valtan,s1*valtan);
+    }
     
     noStroke();
     fill(random(0,255));
