@@ -35,7 +35,7 @@ void draw()
   
   for (int i=0;i<100; i++)
   {
-    if(random(0,10)>5)
+    if(random(0,10)>7)
     {
       noStroke();
       fill(random(0,255));
