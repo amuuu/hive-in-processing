@@ -19,6 +19,7 @@ void draw()
   {
     for (int i = 0 ; i < lines.length; i++)
     {
+      noStroke()
       textSize(fontSize);
       fill(255);
       text(lines[i], paddingX, i*lineSpace+paddingY);
