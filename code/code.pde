@@ -1,5 +1,10 @@
 String[] lines;
 boolean textDisplayed;
+float paddingX = 10;
+float paddingY = 20;
+float lineSpace = 16;
+float fontSize = 14;
+
 void setup()
 {
   background(0);
@@ -14,10 +19,9 @@ void draw()
   {
     for (int i = 0 ; i < lines.length; i++)
     {
-      println(lines[i]);
-      textSize(14);
+      textSize(fontSize);
       fill(255);
-      text(lines[i], 10, i*16+20);
+      text(lines[i], paddingX, i*lineSpace+paddingY);
     }
     textDisplayed=true;
   }
