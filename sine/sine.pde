@@ -1,7 +1,7 @@
 float f, valsin,valcos,valtan;
 float x=400, y=400;
-float radius = 120;
-float margin = 20;
+float radius = 300;
+float margin = 100;
 float s1, s2, s3;
 int counter=0;
 
@@ -25,12 +25,15 @@ void setup()
   size(800, 800, P2D);
   frameRate(12);
   background(color(choosenRs[colorindex],choosenGs[colorindex],choosenBs[colorindex]));
-  lights();
+  //lights();
   
 }
 
 void draw()
 {
+  x = mouseX;
+  y = mouseY;
+  
   counter++;
   if(counter%97==0)
   {
